@@ -54,6 +54,9 @@ returns:
 package IPV4_and_IPV6;
 
 import java.net.InetAddress;
+import java.net.Inet4Address;
+import java.net.Inet6Address;
+
 
 public class LastExample {
     
@@ -62,7 +65,20 @@ public class LastExample {
 
         InetAddress address = InetAddress.getByName("google.com");
 
-        System.out.println("");
+        System.out.println("Host: " + address.getHostName());
+
+        System.out.println("IP Address: " + address.getHostAddress());
+
+        if(address instanceof Inet4Address) {
+
+            System.out.println("This is an IPv4 address.");
+        }
+         else if(address instanceof Inet6Address) {
+            System.out.println("This is an IPv6 address.");
+        }
+
+        System.out.println("Raw IP Address (byte array): " + address.getAddress().length);
+        
 
     }
 }
