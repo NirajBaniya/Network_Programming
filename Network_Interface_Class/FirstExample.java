@@ -21,6 +21,10 @@ package Network_Interface_Class;
 
 import java.net.InetAddress;
 import java.net.NetworkInterface;
+import java.util.Enumeration;
+import java.util.List;
+import java.util.ArrayList;
+import java.net.NetworkInterface;
 
 public class FirstExample {
     
@@ -240,17 +244,27 @@ You can iterate through them.
 
 
 
+//Example
+
+Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
 
 
-/*
+while (interfaces.hasMoreElements()) {
+        NetworkInterface ni = interfaces.nextElement();
+
+        System.out.println(ni);
 
 
 
-*/
+}
+
 
 
      }
 
 }
-    
+  
+
+// program to extract part of URI.
+
 
