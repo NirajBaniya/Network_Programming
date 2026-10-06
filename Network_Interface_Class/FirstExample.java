@@ -246,17 +246,115 @@ You can iterate through them.
 
 //Example
 
-Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
+// Enumeration<NetworkInterface> interfaces = NetworkInterface.getNetworkInterfaces();
 
 
-while (interfaces.hasMoreElements()) {
-        NetworkInterface ni = interfaces.nextElement();
+// while (interfaces.hasMoreElements()) {
+//         NetworkInterface ni = interfaces.nextElement();
 
-        System.out.println(ni);
+//         System.out.println(ni);
+
+       //    }
 
 
 
-}
+
+
+
+
+
+
+
+
+
+
+         /*
+         
+       Understanding the Program Step by Step
+Let's break it down.
+Step 1
+Enumeration<NetworkInterface> interfaces =
+        NetworkInterface.getNetworkInterfaces();
+
+Java asks:
+"Give me all network interfaces available on this computer."
+
+Step 2
+while (interfaces.hasMoreElements())
+
+This asks:
+"Are there more network interfaces?"
+
+If yes, continue.
+Step 3
+NetworkInterface ni =
+        interfaces.nextElement();
+
+This gets the next interface.
+Step 4
+System.out.println(ni);
+
+Prints information about that interface.
+16. Factory Methods Summary
+At this point, remember these four:
+Method	Purpose
+getByName()	Finds interface by name
+getByIndex()	Finds interface by index
+getByInetAddress()	Finds interface associated with an IP address
+getNetworkInterfaces()	Gets all available network interfaces
+
+
+Easy way to remember
+getByName()
+      ↓
+"name"
+
+getByIndex()
+      ↓
+"number"
+
+getByInetAddress()
+      ↓
+"IP address"
+
+getNetworkInterfaces()
+      ↓
+"all interfaces"  
+         
+         
+         */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+Now: Getter Methods
+After obtaining a NetworkInterface object, we can retrieve information about it.
+Important getter methods include:
+getName()
+getDisplayName()
+getIndex()
+getInetAddresses()
+getInterfaceAddresses()
+
+*/
+
+
+
+
+
+
+
 
 
 
