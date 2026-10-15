@@ -25,6 +25,7 @@ import java.util.Enumeration;
 import java.util.List;
 import java.util.ArrayList;
 import java.net.NetworkInterface;
+import java.net.InetAddress;
 
 public class FirstExample {
     
@@ -350,6 +351,155 @@ getInterfaceAddresses()
 */
 
 
+
+
+
+/* 
+    18. getName()
+
+This returns the system-level name of the network interface.
+
+Syntax
+ni.getName();
+*/
+
+
+// NetworkInterface ni = NetworkInterface.getByName("Wi-Fi");
+// System.out.println("Interface Name: " + ni.getName());
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+19. getDisplayName()
+
+This returns a more descriptive name for the interface.
+
+Syntax : 
+
+         ni.getDisplayName();
+
+*/
+
+// NetworkInterface ni = NetworkInterface.getByName("Wi-Fi");
+
+// System.out.println("Interface Display Name: " + ni.getDisplayName());
+
+
+
+
+
+/*
+
+20. Difference Between getName() and getDisplayName()
+This is a common exam question.
+getName()
+Returns the interface's system name.
+Example:
+Wi-Fi
+
+getDisplayName()
+Returns a more descriptive display name.
+Example:
+Intel(R) Wi-Fi 6 AX201
+
+Think:
+getName()
+    ↓
+short/system name
+
+getDisplayName()
+    ↓
+descriptive name
+
+*/
+
+
+
+
+
+
+
+/*
+21. getIndex()
+
+This returns the interface's index.
+
+*/
+
+
+// int index = ni.getIndex();
+
+// System.out.println("Index: " + index);
+
+
+
+
+
+/*
+
+22. getInetAddresses()
+This method is very important.
+A network interface can have multiple IP addresses.
+For example:
+Wi-Fi
+  |
+  +---- IPv4 address
+  |
+  +---- IPv6 address
+
+So Java provides:
+getInetAddresses()
+
+
+It returns an Enumeration<InetAddress>.
+
+Syntax
+Enumeration<InetAddress> addresses = ni.getInetAddresses();
+
+*/
+
+
+// NetworkInterface ni = NetworkInterface.getByName("Wi-Fi");
+
+// Enumeration<InetAddress> addresses = ni.getInetAddresses();
+
+// while (addresses.hasMoreElements()) {
+//         InetAddress address = addresses.nextElement();
+
+//         System.out.println("IP Address: " + address);
+// }
+
+
+
+/*
+
+24. Understanding the Structure
+Now we can connect everything we've learned:
+NetworkInterface
+       |
+       ↓
+      Wi-Fi
+       |
+       +----------------+
+       |                |
+       ↓                ↓
+   InetAddress      InetAddress
+       |                |
+       ↓                ↓
+ IPv4 address       IPv6 address
+
+This is why NetworkInterface and InetAddress are closely related.
+
+*/
 
 
 
